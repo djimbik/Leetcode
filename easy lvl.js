@@ -42,3 +42,50 @@ const filter = function(arr, fn) {
     }
     return result;
 };
+
+// ===================================================================================================
+// easy 3 1. Two Sum
+
+//Given an array of integers nums and an integer target, return indices of the two numbers
+// such that they add up to target.
+//
+// You may assume that each input would have exactly one solution,
+// and you may not use the same element twice.
+//
+// You can return the answer in any order.
+
+var twoSum = function(nums, target) {
+    const map = new Map()
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
+        if (map.has(complement)) {
+            return [map.get(complement), i]
+        }
+        map.set(nums[i], i)
+    }
+};
+
+// Решение O(n), потому что по массиву nums мы проходимся 1 раз, а map работает на скорости O(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

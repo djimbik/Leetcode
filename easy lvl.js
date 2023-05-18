@@ -128,7 +128,14 @@ const pivotIndex = function(nums) {
     return -1
 };
 
+//isPalindrome
+var isPalindrome = function(x) {
+    let newX = x.toString().split('').reverse().join('')
+    console.log(x.toString().split(''))
+    return x === Number(newX)
+};
 
+isPalindrome(10)
 
 
 

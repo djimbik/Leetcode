@@ -128,6 +128,9 @@ const pivotIndex = function(nums) {
     return -1
 };
 
+// ===================================================================================================
+// easy 6
+
 //isPalindrome
 var isPalindrome = function(x) {
     let newX = x.toString().split('').reverse().join('')
@@ -137,7 +140,17 @@ var isPalindrome = function(x) {
 
 isPalindrome(10)
 
+// ===================================================================================================
+// easy 7  2635. Apply Transform Over Each Element in Array
+// https://leetcode.com/problems/apply-transform-over-each-element-in-array/
 
+var map = function(arr, fn) {
+    for( let i = 0; i < arr.length; i++) {
+        arr[i] = fn(arr[i], i)
+    }
+    return arr
+};
+// O(n)
 
 
 

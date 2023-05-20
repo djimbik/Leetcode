@@ -152,6 +152,17 @@ var map = function(arr, fn) {
 };
 // O(n)
 
+// ===================================================================================================
+// easy 8  88. Merge Sorted Array
+//https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&id=top-interview-150
+
+var merge = function(nums1, m, nums2, n) {
+    for (let i = m, j = 0; j < n; i++, j++) {
+        nums1[i] = nums2[j];
+    }
+    nums1.sort((a, b) => a - b);
+};
+
 
 
 

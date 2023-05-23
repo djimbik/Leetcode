@@ -25,3 +25,29 @@ const findBanners = (banners, userWidth) => {
         }
     }
 }
+
+//Задача: найти, сколько раз встречается самый частый элемент в объединении двух отсортированных по возрастанию массивов. Элементы могут повторяться.
+//
+// Примеры:
+
+function countMostFrequent(firstArray, secondArray) {
+    const newArr = [...firstArray, ...secondArray]
+    const counter = {}
+
+    for (const number of newArr) {
+        counter[number] = counter[number] ? counter[number] + 1 : 1
+    }
+
+    let maxValue = 0;
+
+    for (const value of Object.values(counter)) {
+        if (value > maxValue) {
+            maxValue = value
+        }
+    }
+
+  return maxValue;
+
+}
+countMostFrequent([1, 2, 2, 3], [0, 2, 4, 4])
+countMostFrequent([], [0, 0])

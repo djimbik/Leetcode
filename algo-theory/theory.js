@@ -51,3 +51,72 @@ function countMostFrequent(firstArray, secondArray) {
 }
 countMostFrequent([1, 2, 2, 3], [0, 2, 4, 4])
 countMostFrequent([], [0, 0])
+
+
+
+//Связанные списки
+
+// Создание узла связного списка
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+// Создание связного списка
+let node1 = new Node('яблоко');
+let node2 = new Node('банан');
+let node3 = new Node('апельсин');
+
+node1.next = node2;
+node2.next = node3;
+
+// Перебор элементов связного списка
+let currentNode = node1;
+while (currentNode !== null) {
+    console.log(currentNode.value);
+    currentNode = currentNode.next;
+}
+// выводит 'яблоко', 'банан', 'апельсин'
+
+
+
+function deleteNode (head, value) {
+    if (head === null) {
+        return null
+    }
+
+    if (head.value === value) {
+        return head.next
+    }
+
+    let currentNode = head
+    let previousNode = null
+
+    while (currentNode !== null) {
+        if (currentNode.value === value) {
+            previousNode.next = currentNode.next
+            break
+        }
+        previousNode = currentNode
+        currentNode = currentNode.next
+    }
+
+    return head
+}
+
+// Пример 1
+let head = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: null
+        }
+    }
+};
+
+deleteNode(head, 2);
+// Ожидаемый результат: { value: 1, next: { value: 3, next: null } }

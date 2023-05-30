@@ -120,3 +120,54 @@ let head = {
 
 deleteNode(head, 2);
 // Ожидаемый результат: { value: 1, next: { value: 3, next: null } }
+
+
+
+// задача на структуру данных - деревья
+
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.right = null;
+        this.left = null
+    }
+}
+
+const calculateSum = (root) => {
+    if (root === null) {
+        return 0;
+    }
+
+    const leftSum = calculateSum(root.left);
+    const rightSum = calculateSum(root.right);
+
+    return root.value + leftSum + rightSum
+}
+
+const root = new Node(1)
+root.left = new Node(2)
+root.right = new Node(3)
+root.left.left = new Node(4)
+root.left.right = new Node(5)
+root.right.right = new Node(6)
+
+calculateSum(root)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

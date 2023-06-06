@@ -153,6 +153,89 @@ root.right.right = new Node(6)
 
 calculateSum(root)
 
+//again trees
+
+class Node1 {
+    constructor(value) {
+        this.value = value;
+        this.right = null;
+        this.left = null
+    }
+}
+
+const sumTreeLevels = (tree) => {
+    if (tree === null) {
+        return null
+    }
+
+    let left = sumTreeLevels(tree.left)
+    let right = sumTreeLevels(tree.right)
+
+    return  tree.value + left + right
+}
+
+const root1 = new Node1(1)
+root1.left = new Node1(2)
+root1.right = new Node1(3)
+root1.left.left = new Node1(4)
+root1.left.right = new Node1(5)
+root1.right.right = new Node1(6)
+
+sumTreeLevels(root1)
+
+
+// new task Linked list
+class ListNode {
+    constructor(value, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function reverseLinkedList(head) {
+    let prev = null;
+    let current = head
+
+    while (current !== null) {
+        const next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    }
+}
+
+let head = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: null
+        }
+    }
+};
+
+reverseLinkedList(head)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

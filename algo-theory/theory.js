@@ -218,8 +218,25 @@ let head = {
 reverseLinkedList(head)
 
 
+//=============================================================================================================
+// new easy task recursion
 
 
+const countElements = (arr, target) => {
+    if (arr.length === 0) {
+        return 0;
+    }
+
+    const [first, ...rest] = arr
+
+    const countRest = countElements(rest, target);
+
+    const countCurrent = first === target ? 1 : 0
+
+    return countRest + countCurrent
+}
+
+console.log(countElements([2, 4, 6, 2, 8, 2], 2));
 
 
 

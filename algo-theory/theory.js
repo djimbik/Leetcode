@@ -221,7 +221,6 @@ reverseLinkedList(head)
 //=============================================================================================================
 // new easy task recursion
 
-
 const countElements = (arr, target) => {
     if (arr.length === 0) {
         return 0;
@@ -238,10 +237,20 @@ const countElements = (arr, target) => {
 
 console.log(countElements([2, 4, 6, 2, 8, 2], 2));
 
+//=============================================================================================================
+// new easy task trees
+// найти максимальную глубину дерева
 
+function maxDepth(root) {
+    if (root === null) {
+        return 0;
+    }
 
+    const leftDepth = maxDepth(root.left);
+    const rightDepth = maxDepth(root.right);
 
-
+    return Math.max(leftDepth, rightDepth) + 1;
+}
 
 
 

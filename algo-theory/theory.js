@@ -252,8 +252,28 @@ function maxDepth(root) {
     return Math.max(leftDepth, rightDepth) + 1;
 }
 
+//=============================================================================================================
+// 6 kyu Binary Tree Compare
+// сравнить деревья, если одинаковые - true
 
+function compare(a, b) {
+    // If both nodes are null, they are considered equal
+    if (a === null && b === null) {
+        return true;
+    }
 
+    // If one of the nodes is null or their values are not equal, they are not equal
+    if (a === null || b === null || a.value !== b.value) {
+        return false;
+    }
+
+    // Recursively compare the left and right subtrees
+    const leftEqual = compare(a.left, b.left);
+    const rightEqual = compare(a.right, b.right);
+
+    // Return true only if both subtrees are equal
+    return leftEqual && rightEqual;
+}
 
 
 

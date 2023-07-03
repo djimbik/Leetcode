@@ -163,8 +163,37 @@ var merge = function(nums1, m, nums2, n) {
     nums1.sort((a, b) => a - b);
 };
 
+// ===================================================================================================
+// medium 1  49. Group Anagrams
+//https://leetcode.com/problems/group-anagrams/
 
+var groupAnagrams = function(strs) {
+    let map = {}
 
+    for (let s of strs) {
+        const count = new Array(26).fill(0)
 
+        for (let c of s) {
+            count[c.charCodeAt(0) - 'a'.charCodeAt(0)]++
+        }
 
+        let key = ''
+
+        for (let i = 0; i < count.length; i++) {
+            key += '#' + count[i]
+        }
+
+        let arr = []
+
+        if (map[key]) {
+            arr = map[key]
+        }
+
+        arr.push(s)
+
+        map[key] = arr
+    }
+
+    return Object.values(map)
+};
 
